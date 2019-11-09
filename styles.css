@@ -1,0 +1,137 @@
+nav ul li {
+  display: inline;
+  border-bottom: 1px solid black;
+}
+
+.Home ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.Home {
+  display: inline-block;
+}
+
+.Home a::after {
+  display: inline-block;
+  color: #000;
+  content: ">";
+  font-size: 80%;
+  font-weight: bold;
+  padding: 0 3px;
+}
+
+h1 {
+  position: absolute;
+  left: 220px;
+  top: 30px;
+  font: 1.7em "impact";
+  color: white;
+}
+h2 {
+  position: absolute;
+  left: 460px;
+  top: 170px;
+  font: 1.5em "impact";
+  color: white;
+}
+
+body {
+  font: 21px "impact";
+  padding: 2em;
+  margin: 0;
+  background-image: url("https://image.freepik.com/free-vector/blue-black-abstract-metallic-frame-layout-design-tech-innovation-concept-background_71775-884.jpg");
+  background-repeat: no-repeat;
+  background-size: 1150px 800px;
+}
+
+form {
+  position: relative;
+  width: 1100x;
+  height: 800px;
+  margin: 0 auto;
+}
+
+#contact {
+  position: absolute;
+  left: 460px;
+  top: 240px;
+  color: white;
+}
+
+#visit {
+  position: absolute;
+  left: 460px;
+  top: 510px;
+  color: white;
+}
+#hear {
+  position: absolute;
+  left: 460px;
+  top: 475px;
+  color: white;
+}
+
+label {
+  font: 0.8em "impact";
+}
+
+input,
+textarea {
+  font: 0.9em/1.5em "impact";
+  padding: 0 10px;
+  margin: 0;
+  width: 135px;
+  background: grey;
+}
+input:focus,
+textarea:focus {
+  background: grey;
+  border-radius: 5px;
+  outline: none;
+}
+input {
+  height: 2.5em;
+  vertical-align: middle;
+  color: white;
+}
+textarea {
+  display: block;
+  padding: 10px;
+  margin: 2px 0 0 -10px;
+  width: 180px;
+  height: 10px;
+  resize: none;
+  overflow: auto;
+  color: white;
+}
+button {
+  position: absolute;
+  left: 465px;
+  top: 660px;
+  padding: 20px;
+  font: bold 1em "impact";
+  border: 2px solid;
+  color: white;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+}
+button:after {
+  content: " >>>";
+  font-size: 1em;
+  transition: 0.1s font-size linear;
+}
+button:hover:after {
+  font-size: 2em;
+  transition: 0.1s font-size linear;
+}
+/* button:hover {
+  font-size: 18px;
+  transition: 0.1s font-size linear;
+} */
+button:focus {
+  outline: none;
+  background: white;
+  color: #fff;
+}
