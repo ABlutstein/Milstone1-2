@@ -1,54 +1,60 @@
-nav ul li {
-  display: inline;
-  border-bottom: 1px solid black;
-}
-
-.Home ul {
+ul {
   list-style-type: none;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  top: 0;
+}
+li {
+  float: right;
 }
 
-.Home {
-  display: inline-block;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 40px;
+  text-decoration: none;
 }
 
-.Home a::after {
-  display: inline-block;
-  color: #000;
-  content: ">";
-  font-size: 80%;
-  font-weight: bold;
-  padding: 0 3px;
+li a:hover {
+  background-color: white;
 }
-
 h1 {
   position: absolute;
-  left: 220px;
-  top: 30px;
-  font: 1.7em "impact";
+  left: -0.4px;
+  top: -0.8em;
+  background-color: black;
   color: white;
+  font: 100px "century gothic";
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  border-radius: 15px;
+  padding: 15px;
 }
 h2 {
   position: absolute;
   left: 460px;
   top: 170px;
-  font: 1.5em "impact";
-  color: white;
+  font: 1.5em "century gothic";
+  color: black;
 }
 
 body {
-  font: 21px "impact";
+  font: 21px "century gothic";
   padding: 2em;
   margin: 0;
-  background-image: url("https://image.freepik.com/free-vector/blue-black-abstract-metallic-frame-layout-design-tech-innovation-concept-background_71775-884.jpg");
+  background-image: url(whitebackground1.jpg);
   background-repeat: no-repeat;
-  background-size: 1150px 800px;
+  background-size: 1350px 920px;
 }
 
 form {
   position: relative;
-  width: 1100x;
-  height: 800px;
+  width: 13000x;
+  height: 867px;
   margin: 0 auto;
 }
 
@@ -56,44 +62,60 @@ form {
   position: absolute;
   left: 460px;
   top: 240px;
-  color: white;
+  color: black;
 }
 
 #visit {
   position: absolute;
   left: 460px;
   top: 510px;
-  color: white;
+  color: black;
 }
 #hear {
   position: absolute;
   left: 460px;
   top: 475px;
+  color: black;
+}
+p.sidebar1 {
+  font: 20px "century gothic";
   color: white;
+  position: absolute;
+  left: 18px;
+  top: 180px;
+}
+.sidebar1 {
+  background-color: black;
+  padding: 45px;
+  width: 250px;
+  border-radius: 10px;
+  float: left;
 }
 
 label {
-  font: 0.8em "impact";
+  font: 0.8em "century gothic";
 }
 
 input,
 textarea {
-  font: 0.9em/1.5em "impact";
+  font: 0.9em/1.5em "century gothic";
+  border: 1px solid black;
+  border-radius: 20px;
   padding: 0 10px;
   margin: 0;
   width: 135px;
-  background: grey;
+  background: #c9cac8;
 }
 input:focus,
 textarea:focus {
   background: grey;
-  border-radius: 5px;
+  border-radius: 20px;
   outline: none;
 }
 input {
   height: 2.5em;
   vertical-align: middle;
-  color: white;
+  color: black;
 }
 textarea {
   display: block;
@@ -103,16 +125,16 @@ textarea {
   height: 10px;
   resize: none;
   overflow: auto;
-  color: white;
+  color: black;
 }
 button {
   position: absolute;
   left: 465px;
   top: 660px;
   padding: 20px;
-  font: bold 1em "impact";
+  font: bold 1em "century gothic";
   border: 2px solid;
-  color: white;
+  color: black;
   border-radius: 10px;
   background: none;
   cursor: pointer;
@@ -133,5 +155,5 @@ button:hover:after {
 button:focus {
   outline: none;
   background: white;
-  color: #fff;
+  color: black;
 }

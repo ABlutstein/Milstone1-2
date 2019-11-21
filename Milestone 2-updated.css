@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #a1dad0;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: tomato;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+h1 {
+  position: absolute;
+  left: 130px;
+  top: -0.6em;
+  color: white;
+  font: 50px "century gothic";
+}
+h2 {
+  position: absolute;
+  left: 134px;
+  top: 43px;
+  font: 16.7px "century gothic";
+  color: white;
+}
+h3 {
+  position: absolute;
+  left: 400px;
+  top: 125px;
+  color: white;
+  font: 30px "century gothic";
+}
+form {
+  position: relative;
+  width: 13000x;
+  height: 867px;
+  margin: 0 auto;
+}
+
+#contact {
+  position: absolute;
+  left: 460px;
+  top: 240px;
+  color: white;
+}
+
+#visit {
+  position: absolute;
+  left: 460px;
+  top: 510px;
+  color: white;
+}
+#hear {
+  position: absolute;
+  left: 460px;
+  top: 475px;
+  color: white;
+}
+p.sidebar1 {
+  font: 20px "century gothic";
+  color: white;
+  position: absolute;
+  left: 18px;
+  top: 180px;
+}
+.sidebar1 {
+  background-color: none;
+  padding: 45px;
+  width: 250px;
+  border-radius: 10px;
+  float: left;
+}
+
+label {
+  font: 0.8em "century gothic";
+}
+
+input,
+textarea {
+  font: 0.9em/1.5em "century gothic";
+  border: 0px solid whitesmoke;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin: 0;
+  width: 135px;
+  background: whitesmoke;
+}
+input:focus,
+textarea:focus {
+  background: #bcbdbc;
+  border-radius: 20px;
+  outline: none;
+}
+input {
+  height: 2.5em;
+  vertical-align: middle;
+  color: white;
+}
+textarea {
+  display: block;
+  padding: 10px;
+  margin: 2px 0 0 -10px;
+  width: 180px;
+  height: 10px;
+  resize: none;
+  overflow: auto;
+  color: black;
+}
+button {
+  position: absolute;
+  left: 465px;
+  top: 660px;
+  padding: 20px;
+  font: bold 1em "century gothic";
+  border: 2px solid;
+  color: white;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+}
+button:after {
+  content: " >>>";
+  font-size: 1em;
+  transition: 0.1s font-size linear;
+}
+button:hover:after {
+  font-size: 2em;
+  transition: 0.1s font-size linear;
+}
+/* button:hover {
+    font-size: 18px;
+    transition: 0.1s font-size linear;
+  } */
+
+button:focus {
+  outline: none;
+  background: white;
+  color: black;
+}
