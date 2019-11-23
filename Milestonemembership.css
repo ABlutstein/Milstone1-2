@@ -3,7 +3,7 @@ body {
   padding: 0;
   background: #a1dad0;
   color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  font: 20px "century gothic";
 }
 
 a {
@@ -12,98 +12,74 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: tomato;
+.navbar {
+  background-color: #0a737a;
+  overflow: hidden;
+  height: 63px;
 }
 
-#menuToggle {
+.navbar a {
+  float: right;
   display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar ul {
+  margin: 8px 0 0 0;
+  list-style: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
   z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-
-  cursor: pointer;
-
-  opacity: 0;
-  z-index: 2;
-
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: white;
-  border-radius: 3px;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 10px 0;
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
   font-size: 22px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s;
 }
 
-#menuToggle input:checked ~ ul {
-  transform: none;
+.side-nav a:hover {
+  color: #fff;
 }
+
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
 .container {
   position: relative;
   text-align: center;
@@ -116,44 +92,44 @@ a:hover {
 }
 h1 {
   position: absolute;
-  left: 130px;
-  top: -0.6em;
+  left: 30px;
+  top: -0.7em;
   color: white;
   font: 50px "century gothic";
 }
 h2 {
   position: absolute;
-  left: 134px;
-  top: 43px;
+  left: 240px;
+  top: -2px;
   font: 16.7px "century gothic";
   color: white;
 }
 h3 {
-  position: absolute;
-  left: 450px;
-  top: 60px;
-  font: 30px "century gothic";
+  position: relative;
+  left: 310px;
+  top: 7px;
+  font: 40px "century gothic";
   color: white;
 }
 
 form {
   position: block;
   width: 900px;
-  height: 1000px;
+  height: 900px;
   margin: 0 auto;
 }
 p.sidebar1 {
-  font: 15px "century gothic";
+  font: 20px "century gothic";
   color: white;
   position: relative;
-  left: -30px;
-  top: 450px;
+  left: -45;
+  top: 390px;
+  height: 850px;
 }
 .sidebar1 {
-  background-color: none;
-  padding: 70px;
-  width: 800px;
-  border-radius: 10px;
+  background-color: #0a737a;
+  padding: 40px;
+  width: 850px;
   float: right;
 }
 
@@ -161,10 +137,13 @@ label {
   font: 0.8em "century gothic";
 }
 button {
-  position: absolute;
-  left: 450px;
-  top: 1200px;
+  position: relative;
+  top: 210px;
+  left: 300px;
+  width: 200px;
+  height: 100px;
   padding: 20px;
+  margin: 20px;
   font: bold 1em "century gothic";
   border: 2px solid;
   color: white;
@@ -194,7 +173,8 @@ button:focus {
 .carousel {
   position: absolute;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-  margin-top: 110px;
+  margin-top: -54em;
+  margin-left: 30px;
 }
 
 .carousel-inner {
@@ -217,7 +197,7 @@ button:focus {
 .carousel-item img {
   display: block;
   height: 400px;
-  width: 800px;
+  width: 813px;
 }
 
 .carousel-control {
@@ -318,8 +298,63 @@ button:focus {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
     -1px 0px 2px rgba(255, 255, 255, 0);
 }
-@media (min-width: 450px) {
+
+@media (max-width: 900px) {
+  .navbar-nav {
+    display: none;
+  }
+}
+@media (min-width: 568) {
+  /*.open-slide{display:none}*/
+}
+
+@media only screen and (max-width: 600px) {
   p.sidebar1 {
-    font-size: 40px;
+    font-size: 35px;
+    left: -345px;
+    top: 150px;
+    height: 200em;
+    border-radius: 0px;
+    width: 480px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel {
+    position: block;
+    top: 63.5em;
+    left: -1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-item img {
+    height: 225px;
+    width: 500px;
+  }
+}
+@media (max-width: 600px) {
+  h3 {
+    position: relative;
+    left: 190px;
+    top: -1em;
+    font: 30px "century gothic";
+    color: white;
+  }
+}
+@media (max-width: 600px) {
+  button {
+    position: absolute;
+    top: 200em;
+    left: 5px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  h2 {
+    position: absolute;
+    left: 240px;
+    top: 1.3px;
+    font: 10px "century gothic";
+    color: white;
   }
 }
