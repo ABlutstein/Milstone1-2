@@ -311,31 +311,31 @@ button:focus {
 @media only screen and (max-width: 600px) {
   p.sidebar1 {
     font-size: 35px;
-    left: -345px;
+    left: -487px;
     top: 150px;
     height: 200em;
     border-radius: 0px;
-    width: 480px;
+    width: 340px;
   }
 }
 @media (max-width: 600px) {
   .carousel {
     position: block;
     top: 63.5em;
-    left: -1px;
+    left: -30px;
   }
 }
 
 @media (max-width: 600px) {
   .carousel-item img {
     height: 225px;
-    width: 500px;
+    width: 414px;
   }
 }
 @media (max-width: 600px) {
   h3 {
     position: relative;
-    left: 190px;
+    left: 115px;
     top: -1em;
     font: 30px "century gothic";
     color: white;
@@ -344,7 +344,7 @@ button:focus {
 @media (max-width: 600px) {
   button {
     position: absolute;
-    top: 200em;
+    top: 275em;
     left: 5px;
     margin-bottom: 20px;
   }

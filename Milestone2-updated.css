@@ -213,6 +213,3 @@ button:focus {
     display: none;
   }
 }
-@media (min-width: 568) {
-  /*.open-slide{display:none}*/
-}
