@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Shopping Cart</title>
+    <script>
+      //create array that will hold all ordered products
+      const shoppingCart = [];
+
+      //this function manipulates DOM and displays content of our shopping cart
+      function displayShoppingCart() {
+        var orderedProductsTblBody = document.getElementById(
+          "orderedProductsTblBody"
+        );
+        //ensure we delete all previously added rows from ordered products table
+        while (orderedProductsTblBody.rows.length > 0) {
+          orderedProductsTblBody.deleteRow(0);
+        }
+
+        //variable to hold total price of shopping cart
+        let cart_total_price = 0;
+        //iterate over array of objects
+        for (let product in shoppingCart) {
+          //add new row
+          let row = orderedProductsTblBody.insertRow();
+          //create five cells for product properties
+          var cellDel = row.insertCell(0);
+          var cellName = row.insertCell(1);
+          var cellQuantity = row.insertCell(2);
+          var cellRate = row.insertCell(3);
+          var cellPrice = row.insertCell(4);
+          cellPrice.align = "right";
+          //fill cells with values from current product object of our array
+          cellDel.innerHTML =
+            "<input type='button' value='x' onclick='SomeDeleteRowFunction(this)'>";
+          cellName.innerHTML = shoppingCart[product].Name;
+          cellQuantity.innerHTML =
+            "<button onclick='increase_by_one(&#39;qty1&#39;);'>+</button> " +
+            "<input id='qty1' type='text' value='1' name='qty' />" +
+            "<button onclick='decrease_by_one(&#39;qty1&#39;);'>-</button>"; //"|"+shoppingCart[product].Quantity
+          shoppingCart[product].Quantity = document.getElementById(
+            "qty1"
+          ).value;
+          cellRate.innerHTML = shoppingCart[product].Rate;
+          shoppingCart[product].Price =
+            shoppingCart[product].Rate * shoppingCart[product].Quantity;
+          cellPrice.innerHTML = shoppingCart[product].Price;
+          cart_total_price += shoppingCart[product].Price;
+        }
+        //fill total cost of our shopping cart
+        document.getElementById("cart_total").innerHTML = cart_total_price;
+      }
+
+      function AddtoCart(name, quantity, rate, price) {
+        //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
+        var singleProduct = {};
+        //Fill the product object with data
+        //singleProduct.Index=index;
+        singleProduct.Name = name;
+        singleProduct.Quantity = quantity;
+        singleProduct.Rate = rate;
+        singleProduct.Price = price;
+        //Add newly created product to our shopping cart
+        shoppingCart.push(singleProduct);
+        //call display function to show on screen
+        displayShoppingCart();
+      }
+
+      var q = [];
+
+      function SomeDeleteRowFunction(o) {
+        //no clue what to put here
+        var p = o.parentNode.parentNode;
+        //p.parentNode.removeChild(p);
+
+        //  var q=array.indexOf(p);
+        //alert(q);
+        //   if (q > -1) {
+        //     array.splice(q, 1);
+        // }
+        shoppingCart.pop();
+        displayShoppingCart();
+      }
+
+      // Quantity spin buttons
+      function increase_by_one(field) {
+        nr = parseInt(document.getElementById(field).value);
+        document.getElementById(field).value = nr + 1;
+      }
+
+      function decrease_by_one(field) {
+        nr = parseInt(document.getElementById(field).value);
+        if (nr > 0) {
+          if (nr - 1 > 0) {
+            document.getElementById(field).value = nr - 1;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table cellpadding="4" cellspacing="4" border="0">
+      <thead>
+        <tr>
+          <td colspan="2">
+            Products for sale
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Laptop
+          </td>
+          <td>
+            Rs. 40000
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Add to cart"
+              onclick="(AddtoCart(&"
+              #39;
+              Laptop&
+              #39;,1,
+              40000,
+              40000)
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Mobile Phone
+          </td>
+          <td>
+            Rs. 20000
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Add to cart"
+              onclick="AddtoCart(&#39;Mobile Phone&#39;,1,20000,20000)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Headphones
+          </td>
+          <td>
+            Rs. 50000
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Add to cart"
+              onclick="AddtoCart(&#39;Headphones&#39;,1,5000,5000)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Tablet
+          </td>
+          <td>
+            Rs. 30000
+          </td>
+          <td>
+            <input
+              type="button"
+              value="Add to cart"
+              onclick="AddtoCart(&#39;Tablet&#39;,1,30000,30000)"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table cellpadding="4" cellspacing="4" border="1" id="orderedProductsTbl">
+      <thead>
+        <tr>
+          <td>
+            x
+          </td>
+          <td>
+            Name
+          </td>
+          <td>
+            Quantity
+          </td>
+          <td>
+            Rate
+          </td>
+          <td>
+            Price
+          </td>
+        </tr>
+      </thead>
+      <tbody id="orderedProductsTblBody"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Total</td>
+          <td align="right" id="cart_total">0</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
