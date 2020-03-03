@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+    <link href="Weatherapp2.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div>
+      <input type="input" id="weather-input" />
+    </div>
+    <div>
+      <button id="get-weather-button">Get weather</button>
+    </div>
+    <div class="location">
+      <h1 class="location-timezone">Time zone</h1>
+      <p>Icons</p>
+    </div>
+    <div class="temp">
+      <div class="degree-section">
+        <h2 class="degree"></h2>
+        <span>F</span>
+        <div class="temp-description">It is cold</div>
+      </div>
+    </div>
+    <p id="error"></p>
+    <pre id="weather-data"></pre>
+    <script src="Weatherapp2.js"></script>
+  </body>
+</html>
