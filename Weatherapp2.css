@@ -1,19 +1,150 @@
-body {
-  font-size: 16px;
+:root {
+  --bg_main: #7486a5;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #cbcc7a;
+  --darkred: #491a21;
+  --orange: #431bb1;
 }
 
-input,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 button {
-  width: 150px;
-  height: 30px;
-  margin: 10px;
-  font-size: 16px;
+  cursor: pointer;
 }
 
-#weather-data {
-  width: 25px;
+input {
+  -webkit-appearance: none;
 }
 
-#error {
-  color: red;
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font: 1rem/1.3 "Roboto", sans-serif;
+  background: var(--bg_main);
+  color: var(--text_dark);
+  padding: 50px;
+}
+
+.weather {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: white;
+}
+
+.top-banner {
+  color: var(--text_light);
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  padding: 0 0 30px 0;
+}
+
+.top-banner form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.top-banner .input_text {
+  font-size: 1rem;
+  height: 40px;
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid;
+}
+
+.top-banner .input_text {
+  color: currentColor;
+}
+
+.top-banner .submit {
+  font-size: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: 0.3s ease-in-out;
+}
+
+.top-banner .submit:hover {
+  background: var(--darkred);
+}
+
+.top-banner form .msg {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  max-width: 450px;
+  min-height: 40px;
+}
+
+.call-out .container {
+  margin: 60px 0 20px;
+}
+
+.call-out .temp {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+
+.call-out .country {
+  font-size: 0.5em;
+}
+
+.call-out .name {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: navy;
+}
+
+.call-out .icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.call-out .country:after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--text_light);
 }
